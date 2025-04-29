@@ -1,0 +1,11 @@
+.cache/
+.direnv/
+.sass-cache/
+__pycache__/
+@girs/
+bin/
+gen/
+node_modules/
+
+.qmlls.ini
+result*

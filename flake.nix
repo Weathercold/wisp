@@ -44,7 +44,7 @@
 
         nixosModules = {
           default = self.nixosModules.wisp;
-          wisp = ./nix/module.nix;
+          wisp = import ./nix/module.nix self;
         };
       };
 
@@ -78,8 +78,6 @@
                 inputs'.qml-niri.packages.quickshell
                 self'.packages.wisp
               ];
-
-              inputsFrom = [ self'.packages.wisp ];
 
               shellHook = ''
                 # Export Qt environment variables

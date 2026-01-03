@@ -1,3 +1,4 @@
+self:
 {
   config,
   pkgs,
@@ -14,6 +15,7 @@ in
   options.programs.wisp.enable = mkEnableOption "one of the shells of all time";
 
   config = mkIf cfg.enable {
+    nixpkgs.overlays = [ self.overlays.wisp ];
     services.power-profiles-daemon.enable = mkDefault true;
     fonts.packages = with pkgs; [
       cattie

@@ -3,4 +3,4 @@ caching = true
 
 [templates.wisp]
 input_path = 'colors.json.template'
-output_path = '~/.local/share/quickshell/by-shell/be08cd8cf687f5380fff9282911d1ec8/colors.json'
+output_path = '~/.local/share/wisp/colors.json'

@@ -1,5 +1,5 @@
 /* Credit: end-4
-https://github.com/end-4/dots-hyprland/blob/main/dots/.config/quickshell/ii/modules/common/widgets/RoundCorner.qml
+   https://github.com/end-4/dots-hyprland/blob/main/dots/.config/quickshell/ii/modules/common/widgets/RoundCorner.qml
  */
 
 import QtQuick
@@ -10,7 +10,7 @@ import qs.data.theme
 Item {
 	id: root
 
-	enum CornerEnum {
+	enum Orientation {
 		TopRight,
 		BottomRight,
 		BottomLeft,
@@ -19,12 +19,12 @@ Item {
 
 	required property var corner
 	property int implicitSize: 25
-	property color color: Theme.color?.scrim ?? "black"
+	property color color: Theme.color.scrim ?? "black"
 
-	readonly property bool isTopRight: corner === RoundCorner.CornerEnum.TopRight
-	readonly property bool isBottomRight: corner === RoundCorner.CornerEnum.BottomRight
-	readonly property bool isBottomLeft: corner === RoundCorner.CornerEnum.BottomLeft
-	readonly property bool isTopLeft: corner === RoundCorner.CornerEnum.TopLeft
+	readonly property bool isTopRight: corner === RoundCorner.Orientation.TopRight
+	readonly property bool isBottomRight: corner === RoundCorner.Orientation.BottomRight
+	readonly property bool isBottomLeft: corner === RoundCorner.Orientation.BottomLeft
+	readonly property bool isTopLeft: corner === RoundCorner.Orientation.TopLeft
 	readonly property bool isTop: isTopLeft || isTopRight
 	readonly property bool isRight: isTopRight || isBottomRight
 	readonly property bool isBottom: isBottomLeft || isBottomRight

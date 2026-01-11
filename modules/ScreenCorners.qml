@@ -20,16 +20,16 @@ Variants {
 		}
 
 		RoundCorner {
-			corner: RoundCorner.CornerEnum.TopRight
+			corner: RoundCorner.Orientation.TopRight
 		}
 		RoundCorner {
-			corner: RoundCorner.CornerEnum.BottomRight
+			corner: RoundCorner.Orientation.BottomRight
 		}
 		RoundCorner {
-			corner: RoundCorner.CornerEnum.BottomLeft
+			corner: RoundCorner.Orientation.BottomLeft
 		}
 		RoundCorner {
-			corner: RoundCorner.CornerEnum.TopLeft
+			corner: RoundCorner.Orientation.TopLeft
 		}
 	}
 }

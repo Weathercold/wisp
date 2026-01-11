@@ -1,7 +1,7 @@
 import QtQuick
 
 Text {
-	enum Style {
+	enum Variant {
 		Outlined,
 		Rounded,
 		Sharp
@@ -9,12 +9,13 @@ Text {
 
 	property int codePoint
 	property int size: 32
-	property var style: MaterialIcon.Style.Rounded
+	property var variant: MaterialIcon.Variant.Rounded
 	property bool filled: false
 
 	text: String.fromCodePoint(codePoint)
 	font {
-		family: "Material Symbols " + Qt.enumValueToString(MaterialIcon.Style, style)
+		// Qt.enumValueToString breaks Quickshell hot reload
+		family: "Material Symbols " + (variant === MaterialIcon.Variant.Outlined ? "Outlined" : variant === MaterialIcon.Variant.Rounded ? "Rounded" : "Sharp")
 		pixelSize: size
 		variableAxes: {
 			"FILL": filled

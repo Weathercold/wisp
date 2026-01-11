@@ -2,7 +2,6 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Effects
 import Quickshell
-import Quickshell.Services.UPower
 
 import qs.components
 import qs.data.theme
@@ -95,12 +94,7 @@ Variants {
 					Layout.alignment: Qt.AlignHCenter
 				}
 
-				MaterialIcon {
-					text: "battery_0_bar"
-					color: Theme.color.primary
-					visible: UPower.onBattery
-					Layout.alignment: Qt.AlignHCenter
-				}
+				Battery {}
 
 				MaterialIcon {
 					text: "power_settings_new"

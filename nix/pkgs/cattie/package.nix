@@ -1,26 +1,22 @@
 {
   stdenvNoCC,
   lib,
-  fetchurl,
+  fetchzip,
+  installFonts,
+  unzip,
 }:
 stdenvNoCC.mkDerivation {
   pname = "cattie";
   version = "2023-02-20";
 
-  src = fetchurl {
+  src = fetchzip {
     url = "https://dl.dafont.com/dl/?f=cattie_2";
-    hash = "sha256-zXEz67oLHoI5kJtlLSsshqMKokEWrkkwD216xdhTpM4=";
+    extension = "zip";
+    stripRoot = false; # Expect flat list of files
+    hash = "sha256-lINFbx42BqUqY1/1NUhtUAZpCArCCFwMX8d8kjMut7o=";
   };
 
-  dontUnpack = true;
-
-  installPhase = ''
-    runHook preInstall
-
-    install -Dm644 "$src" "$out/share/fonts/truetype/Cattie-Regular.ttf"
-
-    runHook postInstall
-  '';
+  nativeBuildInputs = [ installFonts ];
 
   meta = with lib; {
     description = "Stylish and cute decorative font";
